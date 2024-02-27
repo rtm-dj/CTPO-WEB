@@ -1,0 +1,233 @@
+html{
+    scroll-behavior: smooth;
+}
+
+p{
+    color: #656565;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat';
+}
+
+.navigation{
+    padding: 50px 250px 0 250px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 90px;
+}
+
+
+/* кнопки в меню навигации */
+.navigation a{ 
+    width: 100px;
+    height: 40px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #656565;
+    background-color: #F2F2F2;
+    text-decoration: none;
+    transition: all .2s ease;
+    border-radius: 5px;
+}
+/* кнопки в меню навигации при наведении меняют цвет */
+.navigation a:hover{
+    color: #F2F2F2;
+    background-color: #4f72e8;
+}
+
+.user{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.user h2, .user p{
+    margin: 0;
+}
+
+.user img{
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+}
+
+.banner{
+    padding: 0 250px 0 250px;
+    margin-bottom: 20px;
+}
+
+.banner img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.banner h2{
+    margin: 0;
+}
+
+.banner p{
+    margin: 0px 0 10px 0;
+    color: #656565;
+}
+
+.about{
+    padding: 20px 250px 0 250px;
+    background-color: #F2F2F2;
+    display: flex;
+    justify-content: space-between;
+}
+
+.left{
+    width: 55%;
+    margin-right: 20px;
+}
+
+.about img{
+    width: 45%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.socials a img{
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    transition: .2s ease;
+}
+
+.socials a img:hover{
+    filter: brightness(80%);
+}
+
+.socials a{
+    text-decoration: none;
+}
+
+.socials{
+    margin-top: 60px;
+}
+
+.portfolio{
+    padding: 20px 250px 20px 250px;
+}
+
+.cards{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.card{
+    background-color: #F4F4F4;
+    padding: 10px;
+    width: 500px;
+    transition: all .2s ease;
+}
+
+.card:hover{
+    filter: drop-shadow(0 0 10px rgb(195, 195, 195));
+    cursor: pointer;
+}
+
+.card h2{
+    color: #4B4B4B;
+}
+
+.card p{
+    color: #999999;
+}
+
+.card img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.contacts{
+    background-color: #F2F2F2;
+    padding: 50px 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.top-part{
+    display: flex;
+    justify-content: start;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.contacts p{
+    margin: 0;
+    font-size: 12px;
+    color: #4B4B4B;
+    font-weight: bold;
+}
+
+.input-box input{
+    width: auto;
+    background-color: #ffffff;
+    border: none;
+    padding: 5px;
+}
+
+.content{
+    width: 100%;
+}
+
+textarea{
+    width: 100%;
+    background-color: #ffffff;
+    border: none;
+    padding: 5px;
+}
+
+.form-button{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    color: #747474;
+    border: none;
+    padding: 10px 15px;
+    transition: all .2s ease;
+}
+
+.form-button:hover{
+    background-color: #34c678;
+    color: white;
+    cursor: pointer;
+}
+
+footer{
+    background-color: #4A4A4A;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 250px;
+}
+
+footer a{
+    width: 100px;
+    color: #A0A0A0;
+    text-decoration: none;
+}
+
+footer a:hover{
+    color: #4f72e8;
+}
+
+footer p{
+    color: #A0A0A0;
+}
