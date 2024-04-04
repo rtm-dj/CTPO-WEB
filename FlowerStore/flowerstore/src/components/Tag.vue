@@ -1,5 +1,5 @@
 <template>
-    <div class="tag" :style="{backgroundColor: color}">
+    <div class="main" :style="{backgroundColor: color}">
       <p>{{ text }}</p>
     </div>
 </template>
@@ -11,7 +11,7 @@ export default {
 </script>
 
 <style scoped>
-.tag{
+.main{
     width: fit-content;
     height: 20px;
     border-radius: 5px;
