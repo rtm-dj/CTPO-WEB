@@ -1,6 +1,8 @@
 <template>
-    <div class="main" :style="{backgroundColor: color}">
-      <p>{{ text }}</p>
+    <div>
+        <div class="main" :style="{backgroundColor: color}">
+            <p>{{ text }}</p>
+        </div>
     </div>
 </template>
 
@@ -25,5 +27,6 @@ export default {
 .tag p{
     margin: 0;
     font-size: 0.8rem;
+    color: black;
 }
 </style>
