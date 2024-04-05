@@ -24,7 +24,7 @@ export default {
     justify-content: center;
 }
 
-.tag p{
+.main p{
     margin: 0;
     font-size: 0.8rem;
     color: black;
