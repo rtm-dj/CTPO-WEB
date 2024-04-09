@@ -20,5 +20,7 @@ export default {
 
   body{
     font-family: 'Montserrat';
+    margin: 0;
+    padding: 0;
   }
 </style>
