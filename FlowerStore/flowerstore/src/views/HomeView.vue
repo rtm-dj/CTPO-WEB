@@ -12,11 +12,13 @@
         <div class="reasons">
             <h2>Why FlowerStore?</h2>
             <div class="row1">
-                <div class="reason-small">
-
+                <div class="reason-small" id="delivery">
+                    <h3 class="reason-header">Fast delivery</h3>
+                    <p class="reason-subheader">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <img src="../static/Delivery.png" alt="delivery_man">
                 </div>
-                <div class="reason-big">
-
+                <div class="reason-big" id="fresh">
+                    <h3 class="reason-header">Always fresh flowers</h3>
                 </div>
             </div>
             <div class="row2">
@@ -47,28 +49,77 @@ export default {
 .row1{
     display: grid;
     grid-template-columns: 1fr 2fr;
-    grid-column-gap: 10px;
+    grid-column-gap: 30px;
 }
 .row2{
+    margin-top: 30px;
     display: grid;
     grid-template-columns: 2fr 1fr;
-    grid-column-gap: 10px;
+    grid-column-gap: 30px;
 }
 
 .reason-small, .reason-big{
-    background-color: rgb(225, 225, 225);
-    height: 300px;
-}
-
-.reason-big{
-    width: 600px;
-}
-.reason-small{
-    width: 300px;
+    background-color: #F4F4F4;
+    height: 500px;
+    width: 100%;
+    position: relative;
+    cursor: help;
 }
 
 .reasons{
+    margin-top: 80px;
     padding: 0 20vw;
+}
+
+#delivery{
+    background: rgb(240,210,209);
+    background: linear-gradient(131deg, rgba(240,210,209,1) 0%, rgba(246,239,166,1) 100%);
+}
+
+.reason-header{
+    font-size: 2rem;
+    margin: 30px 0 0 30px;
+}
+
+.reason-subheader{
+    font-size: 1.5rem;
+    margin: 15px 0 0 30px;
+
+    opacity: 0;
+    transition: all .2s ease;
+}
+
+.reason-small img{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 80%;
+    transition: width .2s ease;
+}
+
+#delivery:hover img{
+    width: 90%;
+}
+
+#delivery:hover p{
+    opacity: 1;
+}
+
+#fresh{
+    background-image: url('../static/fon1.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    object-fit: cover;
+
+    transition: all .2s ease;
+}
+
+#fresh .reason-header{
+    color: #404442;
+}
+
+#fresh:hover{
+    background-size: 110%;
 }
 
 </style>
