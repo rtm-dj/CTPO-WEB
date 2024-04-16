@@ -22,11 +22,13 @@
                 </div>
             </div>
             <div class="row2">
-                <div class="reason-big">
-
+                <div class="reason-big" id="types">
+                    <h3 class="reason-header">200+ types of flowers</h3>
                 </div>
-                <div class="reason-small">
-                    
+                <div class="reason-small" id="clock">
+                    <h3 class="reason-header">Everyday, 24h</h3>
+                    <p class="reason-subheader">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <img src="../static/clock.png" alt="clock">
                 </div>
             </div>
         </div>
@@ -49,18 +51,24 @@ export default {
 .row1{
     display: grid;
     grid-template-columns: 1fr 2fr;
+
+    grid-template-rows: 20vw;
+
     grid-column-gap: 30px;
 }
 .row2{
     margin-top: 30px;
     display: grid;
     grid-template-columns: 2fr 1fr;
+
+    grid-template-rows: 20vw;
+
     grid-column-gap: 30px;
 }
 
 .reason-small, .reason-big{
     background-color: #F4F4F4;
-    height: 500px;
+    height: 100%;
     width: 100%;
     position: relative;
     cursor: help;
@@ -69,6 +77,8 @@ export default {
 .reasons{
     margin-top: 80px;
     padding: 0 20vw;
+
+    margin-bottom: 80px;
 }
 
 #delivery{
@@ -105,6 +115,23 @@ export default {
     opacity: 1;
 }
 
+#clock{
+    background: rgb(240,210,209);
+    background: linear-gradient(311deg, rgba(240,210,209,1) 0%, rgba(246,239,166,1) 100%);
+}
+
+#clock img{
+    width: 60%;
+}
+
+#clock:hover img{
+    width: 70%;
+}
+
+#clock:hover p{
+    opacity: 1;
+}
+
 #fresh{
     background-image: url('../static/fon1.jpg');
     background-repeat: no-repeat;
@@ -114,11 +141,24 @@ export default {
     transition: all .2s ease;
 }
 
-#fresh .reason-header{
-    color: #404442;
+#types{
+    background-image: url('../static/fon2.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    object-fit: cover;
+
+    transition: all .2s ease;
 }
 
-#fresh:hover{
+#types .reason-header{
+    color: #515f58;
+}
+
+#fresh .reason-header{
+    color: #515f58;
+}
+
+#fresh:hover, #types:hover{
     background-size: 110%;
 }
 
