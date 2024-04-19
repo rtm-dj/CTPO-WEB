@@ -3,14 +3,18 @@
     <div class="logo">
         <img src="../static/logo.svg" alt="">
     </div>
+
+
     <div class="buttons">
-        <a href="">Home</a>
-        <a href="">Catalog</a>
-        <a href="">Custom bouquet
+        <router-link :to="'/'">Home</router-link>
+        <router-link :to="'/catalog'">Catalog</router-link>
+        <router-link :to="'/'">Custom bouquet
             <Tag :text="'New'" :color="'#F6EFA6'"/>
-        </a>
-        <a href="">Contacts</a>
+        </router-link>
+        <router-link :to="'/'">Contacts</router-link>
     </div>
+
+
     <div class="actions">
         <div class="cart-container">
             <button @click="showCart = !showCart" @blur="showCart = !showCart">
