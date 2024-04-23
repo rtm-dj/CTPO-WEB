@@ -1,12 +1,12 @@
 <template>
     <div class="block">
-        <h3>Name</h3>
+        <h3>{{ data.name }}</h3>
         <div class="subheader">
-            <p>13 шт</p>
-            <p>,</p>
-            <p>4500 руб.</p>
+            <p>{{ data.amount }} шт</p>
+            <p>●</p>
+            <p>{{ data.price }} ₽</p>
         </div>
-        <img src="" alt="">
+        <img :src="data.picture" alt="image">
         <div class="buttons">
             <button class="add">Add to cart</button>
             <button class="buy">Buy</button>
@@ -16,25 +16,23 @@
 
 <script>
 export default {
-
+    props: ['data']
 }
 </script>
 
 <style scoped>
 .add{
     background-color: #8EB19D;
-    border-radius: 5px;
     border: solid 1px #8EB19D;
     color: white;
-    padding: 5px 15px;
+    transition: all .1s ease;
 }
 
 .buy{
-    background-color: #ffffff;
-    border-radius: 5px;
+    background-color: transparent;
     border: solid 1px #8EB19D;
     color: #8EB19D;
-    padding: 5px 15px;
+    transition: all .1s ease;
 }
 
 .add:hover{
@@ -44,13 +42,15 @@ export default {
 }
 
 .buy:hover{
-    background-color: #eeeeee;
+    background-color: #ffffff;
     cursor: pointer;
 }
 
 button{
     font-family: 'Montserrat';
     font-size: 1.1rem;
+    padding: 5px 25px;
+    border-radius: 8px;
 }
 
 .buttons{
@@ -77,11 +77,17 @@ h3, p{
 .block h3{
     font-weight: 500;
     font-size: 2rem;
+    white-space: nowrap;
+    width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 img{
-    height: 200px;
-    width: auto;
+    border-radius: 5px;
+    margin: 15px 0;
+    height: 300px;
+    width: 100%;
     object-fit: cover;
 }
 </style>
