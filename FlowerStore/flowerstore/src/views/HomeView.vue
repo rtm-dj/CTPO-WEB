@@ -76,7 +76,7 @@ export default {
 
 .reasons{
     margin-top: 80px;
-    padding: 0 20vw;
+    padding: 0 500px;
 
     margin-bottom: 80px;
 }

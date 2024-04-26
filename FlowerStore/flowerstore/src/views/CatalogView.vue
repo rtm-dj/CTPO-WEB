@@ -66,7 +66,7 @@ export default {
 
 <style scoped>
 .catalog{
-    padding: 0 20vw;
+    padding: 0 500px;
 }
 
 .blocks{

@@ -11,7 +11,7 @@
         <router-link :to="'/'">Custom bouquet
             <Tag :text="'New'" :color="'#F6EFA6'"/>
         </router-link>
-        <router-link :to="'/'">Contacts</router-link>
+        <router-link :to="'/contacts'">Contacts</router-link>
     </div>
 
 
@@ -88,7 +88,7 @@ export default {
 
 <style scoped>
 .main{
-    padding: 50px 20vw;
+    padding: 50px 500px;
     display: flex;
     align-items: center;
     justify-content: space-between;
