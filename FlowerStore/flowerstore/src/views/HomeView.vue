@@ -1,7 +1,7 @@
 <template>
     <div>
         <Galleria :value="images" :responsiveOptions="responsiveOptions" :numVisible="5" :circular="true" containerStyle="max-width: 100%"
-        :showItemNavigators="true" :showThumbnails="false">
+        :showItemNavigators="true" :showThumbnails="false" :autoPlay="true" :transitionInterval="2000">
             <template #item="slotProps">
                 <img :src="slotProps.item" :alt="slotProps.item" style="object-fit: cover; height: 500px; width: 100%; display: block;" />
             </template>
@@ -77,8 +77,6 @@ export default {
 .reasons{
     margin-top: 80px;
     padding: 0 500px;
-
-    margin-bottom: 80px;
 }
 
 #delivery{

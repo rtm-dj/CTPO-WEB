@@ -1,18 +1,25 @@
 <script>
 import { RouterLink, RouterView } from 'vue-router'
 
-import NavBar from '../src/components/NavBar.vue'
+import NavBar from '../src/components/NavBar.vue' // подключаем навбдар
+import Footer from '../src/components/Footer.vue' // подключаем футер
 
 export default {
-    components: { NavBar },
+    components: { NavBar, Footer }, // указывает все компоненты из импорта для их использования
 }
 
 </script>
 
 <template>
   <NavBar/>
+  <!-- сверху подключаем навбар с менюшкой -->
 
   <RouterView />
+  <!-- роутер для показа страниц -->
+
+  <Footer/>
+  <!-- футер внизу страницы -->
+  
 </template>
 
 <style>

@@ -4,7 +4,7 @@
         <img src="../static/logo.svg" alt="">
     </div>
 
-
+    <!-- Меню навигации -->
     <div class="buttons">
         <router-link :to="'/'">Home</router-link>
         <router-link :to="'/catalog'">Catalog</router-link>
