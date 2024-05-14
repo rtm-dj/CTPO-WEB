@@ -22,18 +22,23 @@
             </svg>
 
             <div v-if="showCart" class="cart">
-                <div v-for="item in products" :key="item.id">
-                    <div class="cart-item">
-                        <h3>{{ item.name }}</h3>
-                        <div>
-                            <span class="price">{{ item.price }} ₽</span>
-                            <svg width="20" height="20" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5.41667 0C8.41208 0 10.8333 2.42125 10.8333 5.41667C10.8333 8.41208 8.41208 10.8333 5.41667 10.8333C2.42125 10.8333 0 8.41208 0 5.41667C0 2.42125 2.42125 0 5.41667 0ZM8.125 2.70833H6.77083L6.22917 2.16667H4.60417L4.0625 2.70833H2.70833V3.79167H8.125V2.70833ZM3.79167 8.66667H7.04167C7.18533 8.66667 7.3231 8.6096 7.42468 8.50802C7.52627 8.40644 7.58333 8.26866 7.58333 8.125V4.33333H3.25V8.125C3.25 8.26866 3.30707 8.40644 3.40865 8.50802C3.51023 8.6096 3.64801 8.66667 3.79167 8.66667Z" fill="#F0D2D1"/>
-                            </svg>
+
+                
+                <div class="items">
+                    <div v-for="item in products" :key="item.id">
+                        <div class="cart-item">
+                            <h3>{{ item.name }}</h3>
+                            <div>
+                                <span class="price">{{ item.price }} ₽</span>
+                                <svg width="20" height="20" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.41667 0C8.41208 0 10.8333 2.42125 10.8333 5.41667C10.8333 8.41208 8.41208 10.8333 5.41667 10.8333C2.42125 10.8333 0 8.41208 0 5.41667C0 2.42125 2.42125 0 5.41667 0ZM8.125 2.70833H6.77083L6.22917 2.16667H4.60417L4.0625 2.70833H2.70833V3.79167H8.125V2.70833ZM3.79167 8.66667H7.04167C7.18533 8.66667 7.3231 8.6096 7.42468 8.50802C7.52627 8.40644 7.58333 8.26866 7.58333 8.125V4.33333H3.25V8.125C3.25 8.26866 3.30707 8.40644 3.40865 8.50802C3.51023 8.6096 3.64801 8.66667 3.79167 8.66667Z" fill="#F0D2D1"/>
+                                </svg>
+                            </div>
                         </div>
+                        <hr class="cart-divider">
                     </div>
-                    <hr class="cart-divider">
                 </div>
+                
                 
                 <div class="total">
                     <h3>Tot.</h3>
@@ -61,26 +66,14 @@ export default {
     data(){
         return{
             showCart: false,
-
-            products: [
-                {
-                    id: '1',
-                    name: 'Букет роз',
-                    price: '2500',
-                },
-                {
-                    id: '2',
-                    name: 'Ромашки',
-                    price: '400',
-                },
-                {
-                    id: '3',
-                    name: 'Кактус XXL',
-                    price: '4200',
-                },
-            ]
         }
     },
+
+    computed: {
+        products(){
+            return this.$store.state.cart.reverse();
+        }
+    }
 }
 </script>
 
@@ -134,6 +127,11 @@ export default {
     top: 20px;
 
     width: 300px;
+}
+
+.items{
+    max-height: 400px;
+    overflow-y: scroll;
 }
 
 .cart-container svg{

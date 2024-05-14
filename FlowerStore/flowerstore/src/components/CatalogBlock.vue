@@ -8,7 +8,7 @@
         </div>
         <img :src="data.picture" alt="image">
         <div class="buttons">
-            <button class="add">Add to cart</button>
+            <button @click="addToCart" class="add">Add to cart</button>
             <button class="buy">Buy</button>
         </div>
     </div>
@@ -16,7 +16,13 @@
 
 <script>
 export default {
-    props: ['data']
+    props: ['data'],
+    methods: {
+        addToCart(){
+            this.$store.commit('ADD_TO_CART', this.data)
+            console.log('Товар успешно добавлен!')
+        }
+    }
 }
 </script>
 
