@@ -1,29 +1,8 @@
 <template>
-  <div class="main">
-    <div class="logo">
-        <img src="../static/logo.svg" alt="">
-    </div>
-
-    <!-- Меню навигации -->
-    <div class="buttons">
-        <router-link :to="'/'">Home</router-link>
-        <router-link :to="'/catalog'">Catalog</router-link>
-        <router-link :to="'/'">Custom bouquet
-            <Tag :text="'New'" :color="'#F6EFA6'"/>
-        </router-link>
-        <router-link :to="'/contacts'">Contacts</router-link>
-    </div>
-
-
-    <div class="actions">
-        <div class="cart-container">
-            <svg class="cart-button" tabindex="1" @click="showCart = true" @blur="showCart = false" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12.75 12.5C11.9175 12.5 11.25 13.1675 11.25 14C11.25 14.3978 11.408 14.7794 11.6893 15.0607C11.9706 15.342 12.3522 15.5 12.75 15.5C13.1478 15.5 13.5294 15.342 13.8107 15.0607C14.092 14.7794 14.25 14.3978 14.25 14C14.25 13.1675 13.575 12.5 12.75 12.5ZM0.75 0.5V2H2.25L4.95 7.6925L3.93 9.53C3.8175 9.74 3.75 9.9875 3.75 10.25C3.75 10.6478 3.90804 11.0294 4.18934 11.3107C4.47064 11.592 4.85218 11.75 5.25 11.75H14.25V10.25H5.565C5.51527 10.25 5.46758 10.2302 5.43242 10.1951C5.39725 10.1599 5.3775 10.1122 5.3775 10.0625C5.3775 10.025 5.385 9.995 5.4 9.9725L6.075 8.75H11.6625C12.225 8.75 12.72 8.435 12.975 7.9775L15.66 3.125C15.7125 3.005 15.75 2.8775 15.75 2.75C15.75 2.55109 15.671 2.36032 15.5303 2.21967C15.3897 2.07902 15.1989 2 15 2H3.9075L3.2025 0.5M5.25 12.5C4.4175 12.5 3.75 13.1675 3.75 14C3.75 14.3978 3.90804 14.7794 4.18934 15.0607C4.47064 15.342 4.85218 15.5 5.25 15.5C5.64782 15.5 6.02936 15.342 6.31066 15.0607C6.59196 14.7794 6.75 14.3978 6.75 14C6.75 13.1675 6.075 12.5 5.25 12.5Z" fill="black"/>
-            </svg>
-
+    <div class="navbar">
+        <div class="overlay" v-if="showCart">
             <div v-if="showCart" class="cart">
-
-                
+                <h2>Shopping Cart</h2>
                 <div class="items">
                     <div v-for="item in products" :key="item.id">
                         <div class="cart-item">
@@ -38,24 +17,43 @@
                         <hr class="cart-divider">
                     </div>
                 </div>
-                
-                
                 <div class="total">
                     <h3>Tot.</h3>
                     <h2>{{ total }} ₽</h2>
                 </div>
-
                 <div class="cart-buttons">
                     <button class="checkout">Checkout</button>
                 </div>
             </div>
         </div>
+        <div class="main">
+            <div class="logo">
+                <img src="../static/logo.svg" alt="">
+            </div>
 
-        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M6 0C6.79565 0 7.55871 0.31607 8.12132 0.87868C8.68393 1.44129 9 2.20435 9 3C9 3.79565 8.68393 4.55871 8.12132 5.12132C7.55871 5.68393 6.79565 6 6 6C5.20435 6 4.44129 5.68393 3.87868 5.12132C3.31607 4.55871 3 3.79565 3 3C3 2.20435 3.31607 1.44129 3.87868 0.87868C4.44129 0.31607 5.20435 0 6 0ZM6 7.5C9.315 7.5 12 8.8425 12 10.5V12H0V10.5C0 8.8425 2.685 7.5 6 7.5Z" fill="black"/>
-        </svg>
+            <!-- Меню навигации -->
+            <div class="buttons">
+                <router-link :to="'/'">Home</router-link>
+                <router-link :to="'/catalog'">Catalog</router-link>
+                <router-link :to="'/'">Custom bouquet
+                    <Tag :text="'New'" :color="'#F6EFA6'"/>
+                </router-link>
+                <router-link :to="'/contacts'">Contacts</router-link>
+            </div>
+
+
+            <div class="actions">
+                <svg class="cart-button" tabindex="1" @blur="showCart = false" @click="showCart = true" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12.75 12.5C11.9175 12.5 11.25 13.1675 11.25 14C11.25 14.3978 11.408 14.7794 11.6893 15.0607C11.9706 15.342 12.3522 15.5 12.75 15.5C13.1478 15.5 13.5294 15.342 13.8107 15.0607C14.092 14.7794 14.25 14.3978 14.25 14C14.25 13.1675 13.575 12.5 12.75 12.5ZM0.75 0.5V2H2.25L4.95 7.6925L3.93 9.53C3.8175 9.74 3.75 9.9875 3.75 10.25C3.75 10.6478 3.90804 11.0294 4.18934 11.3107C4.47064 11.592 4.85218 11.75 5.25 11.75H14.25V10.25H5.565C5.51527 10.25 5.46758 10.2302 5.43242 10.1951C5.39725 10.1599 5.3775 10.1122 5.3775 10.0625C5.3775 10.025 5.385 9.995 5.4 9.9725L6.075 8.75H11.6625C12.225 8.75 12.72 8.435 12.975 7.9775L15.66 3.125C15.7125 3.005 15.75 2.8775 15.75 2.75C15.75 2.55109 15.671 2.36032 15.5303 2.21967C15.3897 2.07902 15.1989 2 15 2H3.9075L3.2025 0.5M5.25 12.5C4.4175 12.5 3.75 13.1675 3.75 14C3.75 14.3978 3.90804 14.7794 4.18934 15.0607C4.47064 15.342 4.85218 15.5 5.25 15.5C5.64782 15.5 6.02936 15.342 6.31066 15.0607C6.59196 14.7794 6.75 14.3978 6.75 14C6.75 13.1675 6.075 12.5 5.25 12.5Z" fill="black"/>
+                </svg>
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 0C6.79565 0 7.55871 0.31607 8.12132 0.87868C8.68393 1.44129 9 2.20435 9 3C9 3.79565 8.68393 4.55871 8.12132 5.12132C7.55871 5.68393 6.79565 6 6 6C5.20435 6 4.44129 5.68393 3.87868 5.12132C3.31607 4.55871 3 3.79565 3 3C3 2.20435 3.31607 1.44129 3.87868 0.87868C4.44129 0.31607 5.20435 0 6 0ZM6 7.5C9.315 7.5 12 8.8425 12 10.5V12H0V10.5C0 8.8425 2.685 7.5 6 7.5Z" fill="black"/>
+                </svg>
+            </div>
+
+            
+        </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -78,6 +76,20 @@ export default {
 </script>
 
 <style scoped>
+.overlay{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(29, 29, 29, 0.63);
+    position: fixed;
+    z-index: 98;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow-x: hidden;
+}
+
 .main{
     padding: 50px 500px;
     display: flex;
@@ -112,25 +124,20 @@ export default {
     align-items: center;
 }
 
-.cart-container{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 .cart{
     background-color: white;
-    filter: drop-shadow(0 0 10px rgb(232, 232, 232));
+    border-radius: 10px;
     position: absolute;
     z-index: 99;
-    top: 20px;
 
-    width: 300px;
+    width: 675px;
+    height: 500px;
+
+    padding: 30px;
 }
 
 .items{
-    max-height: 400px;
+    max-height: 300px;
     overflow-y: scroll;
 }
 
