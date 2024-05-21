@@ -1,14 +1,17 @@
 <template>
     <div>
-        <Galleria :value="images" :responsiveOptions="responsiveOptions" :numVisible="5" :circular="true" containerStyle="max-width: 100%"
-        :showItemNavigators="true" :showThumbnails="false" :autoPlay="true" :transitionInterval="2000">
-            <template #item="slotProps">
-                <img :src="slotProps.item" :alt="slotProps.item" style="object-fit: cover; height: 500px; width: 100%; display: block;" />
-            </template>
-            <template #thumbnail="slotProps">
-                <img :src="slotProps.item.thumbnailImageSrc" :alt="slotProps.item.alt" style="display: block;" />
-            </template>
-        </Galleria>
+        <div class="galleria">
+            <div class="galleria-item">
+                <div class="galleria-content">
+                    <h3>01</h3>
+                    <h2>The best flower shop <br> in Moscow!</h2>
+                    <div class="galleria-line"></div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et</p>
+                </div>
+                <button>View catalog</button>
+            </div>
+        </div>
+
         <div class="reasons">
             <h2>Why FlowerStore?</h2>
             <div class="row1">
@@ -160,4 +163,57 @@ export default {
     background-size: 110%;
 }
 
+
+.galleria{
+    width: 100%;
+    padding: 0 500px;
+    height: 700px;
+
+    background-image: url('../static/1699277741_binomen-ru-p-serii-fon-s-zelenyu-pinterest-15.jpg');
+    background-size: 100%;
+}
+
+
+.galleria-content h3, h2{
+    font-size: 3rem;
+    margin: 0;
+}
+
+.galleria-content h2{
+    color: #1D2029;
+}
+
+.galleria-content h3{
+    color: #8EB19D;
+}
+.galleria-line{
+    height: 5px;
+    width: 100px;
+    background-color: #8EB19D;
+}
+
+.galleria-item button{
+    background-color: #8EB19D;
+    border-radius: 5px;
+    width: 200px;
+    height: 40px;
+    font-family: 'Montserrat';
+    border: none;
+    color: white;
+    transition: all .2s ease;
+    
+    margin-top: 50px;
+}
+
+.galleria-item button:hover{
+    background-color: #769282;
+    cursor: pointer;
+}
+
+.galleria-item{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+}
 </style>
